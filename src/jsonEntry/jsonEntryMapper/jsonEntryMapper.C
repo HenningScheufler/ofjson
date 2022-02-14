@@ -48,17 +48,15 @@ Foam::autoPtr<Foam::entry> Foam::jsonEntryMapper::New
     dictionary& parentDict 
 )
 {
-    // Info << "jsonEntry " << endl;
     for (const word& type : wordConstructorTablePtr_->toc())
     {
-        auto* ctorPtr = wordConstructorTable(type);
-        autoPtr<jsonEntryMapper> jsonType(ctorPtr(jsonEntry,j,parentDict));
+        auto ctorPtr = wordConstructorTablePtr_->cfind(type);
+        autoPtr<jsonEntryMapper> jsonType(ctorPtr()(jsonEntry,j,parentDict));
         Foam::autoPtr<Foam::entry> entryType = jsonType->getEntry();
         if (entryType)
         {
             return entryType;
         }
-        // Info << "type" << type << " corrType " << entryType.empty() <<  endl;
     }
 
     FatalErrorInFunction
