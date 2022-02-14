@@ -79,29 +79,7 @@ protected:
             const dictionary& dict
         );
 
-        // //- Include file in a sub-dict context
-        // static bool execute
-        // (
-        //     dictionary& parentDict,
-        //     Istream& is
-        // );
-
-        // //- Include file in a primitiveEntry context
-        // static bool execute
-        // (
-        //     const dictionary& parentDict,
-        //     primitiveEntry& entry,
-        //     Istream& is
-        // );
-
-
 public:
-
-    // Static Data Members
-
-        //- Report to stdout which file is included
-        static bool log;
-
 
     // Member Functions
 

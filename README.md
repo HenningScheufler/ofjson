@@ -1,11 +1,39 @@
-# OpenFOAM Library Template
+# ofjson
 
-OpenFOAM Library template to quickly generate a library with testsuite and hosted documenation
+enables embedding json files in OpenFOAM dictionaries by
 
-zip or clone this library and edit it from there
+```
+#json "<case>/test.json";
+```
 
-## documentation
+cat test.json:
 
-the documentation is hosted with github pages:
+```json
+{
+    "string": "string",
+    "istream": "istream;",
+    "label": 10,
+    "scalar": 10.1,
+    "vector": [1.1, 2.2, 3.3],
+    "subDict": {
+        "sub_string": "string",
+        "sub_istream": "istream;",
+        "sub_label": 10,
+        "sub_scalar": 10.1
+    },
+    "scalarField": {
+        "type": "scalarField",
+        "value": [1.1, 2.2, 3.3, 4.4]
+    }
+}
+```
 
-[documentation](https://henningscheufler.github.io/OFLibraryTemplate/index.html)
+The standard OpenFOAM access patterns apply:
+
+
+```
+{
+    $string; // would return string
+    $scalar; // would return 10
+}
+```
