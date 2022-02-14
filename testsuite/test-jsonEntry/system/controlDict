@@ -15,7 +15,7 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-application     solidFoam;
+application     test-includeJson;
 
 startFrom       startTime;
 
@@ -54,14 +54,5 @@ libs
     ofjson
 );
 
-functions
-{
-    avgT
-    {
-        type            writeAvg;
-        libs            (utilityFunctionObjects);
-        fieldName       T;
-    }
-}
 
 // ************************************************************************* //

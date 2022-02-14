@@ -34,6 +34,10 @@ License
 #include "Time.H"
 #include "fileOperation.H"
 
+#include <json.H>
+
+// using json = nlohmann::json;
+
 // * * * * * * * * * * * * * * Static Data Members * * * * * * * * * * * * * //
 
 bool Foam::functionEntries::jsonEntry::log(false);
@@ -192,10 +196,14 @@ bool Foam::functionEntries::jsonEntry::execute
 {
     const fileName rawName(is);
     const fileName fName(resolveFile(is.name().path(), rawName, parentDict));
-    Info << "parentDict " << parentDict << endl;
-    Info << "fName " << fName << endl;
+
+    std::ifstream i(fName);
+    json j;
+    i >> j;
+
+    from_json(j,parentDict);
+
     return true;
-    // return jsonEntry::execute(parentDict, is);
 }
 
 
@@ -208,10 +216,6 @@ bool Foam::functionEntries::jsonEntry::execute
 {
     const fileName rawName(is);
     const fileName fName(resolveFile(is.name().path(), rawName, parentDict));
-    Info << "parentDict " << parentDict << endl;
-    Info << "primitiveEntry " << entry << endl;
-    Info << "fName " << fName << endl;
-    // Info << "Istream " << is << endl;
 
     return true;
     

@@ -1,3 +1,17 @@
 {
-    "Hello": "World"
+  "string": "string",
+  "istream": "istream;",
+  "label": 10,
+  "scalar": 10.1,
+  "vector": [1.1,2.2,3.3],
+  "subDict": {
+    "sub_string": "string",
+    "sub_istream": "istream;",
+    "sub_label": 10,
+    "sub_scalar": 10.1
+  },
+  "scalarField": {
+    "type": "scalarField",
+    "value": [1.1,2.2,3.3,4.4]
+  }
 }

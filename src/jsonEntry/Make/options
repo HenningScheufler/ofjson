@@ -1,3 +1,4 @@
 EXE_INC = \
+    -I. 
 
 LIB_LIBS = \

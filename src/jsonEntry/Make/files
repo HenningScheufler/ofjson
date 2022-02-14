@@ -1,5 +1,12 @@
 
 
 jsonEntry.C
+jsonEntryMapper/jsonEntryMapper.C
+jsonEntryMapper/jsonString/jsonString.C
+jsonEntryMapper/jsonLabel/jsonLabel.C
+jsonEntryMapper/jsonScalar/jsonScalar.C
+jsonEntryMapper/jsonDict/jsonDict.C
+jsonEntryMapper/jsonVector/jsonVector.C
+jsonEntryMapper/jsonScalarField/jsonScalarField.C
 
 LIB = $(FOAM_USER_LIBBIN)/libofjson
